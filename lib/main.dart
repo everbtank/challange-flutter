@@ -38,11 +38,12 @@ class _MyAppState extends State<MyApp> {
           title: Text('Challenger'),
         ),
       
-        body: Container(
+        body: Center(
           
           child:  Column(
           children: <Widget> [
           FutureBuilder<Texto>(
+            
               future: futureTexto,
               builder: (context, snapshot) {
                 if (snapshot.hasData) {
@@ -73,17 +74,8 @@ class _MyAppState extends State<MyApp> {
               child: Text("Next fact"),
               splashColor: Colors.amber,
               color: Colors.blueAccent,
-              onPressed: ()  {
-                              
-                  @override
-                  void initState() {
-                    super.initState();
-                    futureAlbum = fetchAlbum();
-                    futureTexto = fetchTexto();
-                  }
-                print("next fact");
-                
-              },
+              onPressed:  () => Navigator.pop(context,true),
+              
               ),
       ),
     );
