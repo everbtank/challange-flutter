@@ -74,10 +74,13 @@ class _MyAppState extends State<MyApp> {
               splashColor: Colors.amber,
               color: Colors.blueAccent,
               onPressed: ()  {
-                initState();
-              Navigator.push(    context, new MaterialPageRoute(
-              builder: (context) => this.build(context)));
-                setState(() {});
+                              
+                  @override
+                  void initState() {
+                    super.initState();
+                    futureAlbum = fetchAlbum();
+                    futureTexto = fetchTexto();
+                  }
                 print("next fact");
                 
               },
