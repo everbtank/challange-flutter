@@ -27,14 +27,18 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Challenger',
       theme: theme(),
+  
       home: Scaffold(
         appBar: AppBar(
           title: Text('Challenger'),
         ),
+      
         body: Container(
+          
           child:  Column(
           children: <Widget> [
           FutureBuilder<Texto>(
@@ -48,7 +52,7 @@ class _MyAppState extends State<MyApp> {
                 return CircularProgressIndicator();
               },
             ),
-
+          
           FutureBuilder<Album>(
             future: futureAlbum,
             builder: (context, snapshot) {
@@ -65,11 +69,15 @@ class _MyAppState extends State<MyApp> {
           ),
         ), floatingActionButton: MaterialButton(
               disabledColor: Colors.amber,
-              child: Text("Raised Button"),
+              child: Text("Next fact"),
               splashColor: Colors.amber,
               color: Colors.blueAccent,
               onPressed: ()  {
+              Navigator.push(    context, new MaterialPageRoute(
+              builder: (context) => this.build(context)));
+                setState(() {});
                 print("Hola Raised Button");
+                
               },
               ),
       ),
