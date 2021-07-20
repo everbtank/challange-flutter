@@ -14,6 +14,7 @@ class MyApp extends StatefulWidget {
   _MyAppState createState() => _MyAppState();
 }
 
+
 class _MyAppState extends State<MyApp> {
   late Future<Album> futureAlbum;
   late Future<Texto> futureTexto;
@@ -73,10 +74,11 @@ class _MyAppState extends State<MyApp> {
               splashColor: Colors.amber,
               color: Colors.blueAccent,
               onPressed: ()  {
+                initState();
               Navigator.push(    context, new MaterialPageRoute(
               builder: (context) => this.build(context)));
                 setState(() {});
-                print("Hola Raised Button");
+                print("next fact");
                 
               },
               ),
